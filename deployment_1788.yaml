@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: myDeployment
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: myapp1
+  template:
+    metadata:
+      labels:
+        app: myapp1
+    spec:
+      containers:
+        - name: scd-final-lab-exam-faaaroooqi-master
+          image: faaaroooqi/scd-final-lab-exam-faaaroooqi-master:latest
+          ports:
+            - containerPort: 80
